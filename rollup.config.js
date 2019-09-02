@@ -1,14 +1,14 @@
-import minify from 'rollup-plugin-babel-minify';
+import minify from "rollup-plugin-babel-minify";
 
-const outFolder = 'dist';
+const outFolder = "dist";
 
 export default [
-  {
-    input: 'src/rough-painter.js',
-    output: {
-      file: `${outFolder}/rough-painter.bundled.js`,
-      format: 'iife'
-    },
-    plugins: [minify({ comments: false })]
-  }
+	{
+		input: "src/underline-worklet.js",
+		output: {
+			file: `${outFolder}/underline-worklet.bundled.js`,
+			format: "iife"
+		},
+		plugins: [minify({ comments: false })]
+	}
 ];

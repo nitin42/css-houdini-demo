@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+		<script src="https://unpkg.com/p5.createloop@0.1.3/dist/p5.createloop.js"></script>
+		<title>Tech lunch N learn: CSS Houdini</title>
+		<style>
+			html {
+				font-family: graphik, -apple-system, helvetica, futura, sans-serif;
+			}
+
+			@font-face {
+				font-family: Graphik;
+				src: url("https://storage.bulb.co.uk/fonts/Graphik-Regular.woff2");
+			}
+
+			.center {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 3rem;
+				margin: 3rem;
+			}
+
+			.heading-with-underlines {
+				width: 450px;
+				font-size: 13rem;
+				color: #e4228e;
+				background: paint(underline-worklet);
+				--stroke: #003366;
+				--line-width: 0.02;
+				--number-of-underlines: 45;
+				--spread-offset: 12;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="center">
+			<h1 class="heading-with-underlines">Bulb</h1>
+		</div>
+		<script>
+			CSS.paintWorklet.addModule("../dist/underline-worklet.bundled.js");
+		</script>
+	</body>
+</html>
